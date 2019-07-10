@@ -1,11 +1,18 @@
 dotnet: "2.1.502"
 language: csharp
 mono: none
+install: 
+- dotnet restore
+before_script:
+ - cd moltenCore/ClientApp
+ - npm install -g @angular/cli
+ - cd..
+ - cd..
+
 script:
- - dotnet restore
  - dotnet build
- - cd moltenCore
- - cd ClientApp
+ - cd moltenCore/ClientApp
+ - ng lint
  - ng test --watch=false
 
 #stages:
