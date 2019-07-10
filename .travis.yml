@@ -1,12 +1,15 @@
+--- 
+dotnet: "2.1.502"
+jobs: 
+  include: 
+    - 
+      script: ~
+      stage: build
+    - "dotnet restore"
+    - "dotnet build"
+    - 
+      script: 
+        - "ng test --watch=false"
+      stage: test
 language: csharp
 mono: none
-dotnet: 2.1.502
-jobs:
-    include:
-        - stage: build
-          script:
-        - dotnet restore
-        - dotnet build
-        - stage: test
-          script:
-          '.\moltenCore\ClientApp ng test --watch=false'
