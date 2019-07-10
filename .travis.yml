@@ -1,12 +1,19 @@
 dotnet: "2.1.502"
 language: csharp
 mono: none
+stages:
+    - name: Build
+    - name: Unit Tests
+   # - name: E2E tests
+
 jobs: 
   include: 
-    stage: build
-    script:
-    - "dotnet restore"
-    - "dotnet build"
-    stage: test
-    script: 
-    - "ng test --watch=false"
+    - stage: build
+      script: "dotnet restore"
+      script: "dotnet build"
+    
+    - stage: Unit Tests
+      script: "cd moltenCore"
+      script: "cd ClientApp"
+      script: "ng test --watch=false"
+
