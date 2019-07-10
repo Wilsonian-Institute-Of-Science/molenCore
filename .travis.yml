@@ -9,8 +9,8 @@ before_script:
 script:
  - dotnet build
  - cd moltenCore/ClientApp
- - ng lint
- - ng test --watch=false
+ #- ng lint
+ #- ng test --watch=false
 
 #stages:
    # - name: Build
