@@ -4,10 +4,7 @@ mono: none
 install: 
 - dotnet restore
 before_script:
- - cd moltenCore/ClientApp
  - npm install -g @angular/cli
- - cd..
- - cd..
 
 script:
  - dotnet build
